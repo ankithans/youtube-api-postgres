@@ -13,7 +13,7 @@ var (
 
 func NewDatabase() *gorm.DB {
 	db, err := gorm.Open(postgres.New(postgres.Config{
-		DSN: "postgresql://localhost/ankithans",
+		DSN: "postgres://user:password@db:5432/db?sslmode=disable",
 	}), &gorm.Config{})
 
 	if err != nil {
