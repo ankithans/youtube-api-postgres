@@ -1,4 +1,4 @@
-package routes
+package services
 
 import (
 	"context"
@@ -7,12 +7,11 @@ import (
 	"github.com/ankithans/youtube-api/pkg/database"
 	"github.com/ankithans/youtube-api/pkg/models"
 	"github.com/ankithans/youtube-api/pkg/utils"
-	"github.com/gofiber/fiber/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/youtube/v3"
 )
 
-func PostVideos(c *fiber.Ctx) error {
+func PostVideos() {
 
 	// Use Youtube API to get videos
 	youtubeService, err := youtube.NewService(
@@ -48,8 +47,9 @@ func PostVideos(c *fiber.Ctx) error {
 		}
 	}
 
+	fmt.Print(videos)
+
 	// Store them in database
 	database.DBConn.Create(&videos)
 
-	return c.JSON(videos)
 }

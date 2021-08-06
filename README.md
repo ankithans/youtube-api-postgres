@@ -2,10 +2,10 @@
 Fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
 
 ## Tasks
-- Server should call the YouTube API continuously in background (async) with some interval (say 10 seconds)
-- fetching the latest videos for a predefined search query and should store the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs and any other fields you require) in a database with proper indexes
-- A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime
-- A basic search API to search the stored videos using their title and description
+- ~~Server should call the YouTube API continuously in background (async) with some interval (say 10 seconds)~~
+- ~~fetching the latest videos for a predefined search query and should store the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs and any other fields you require) in a database with proper indexes~~
+- ~~A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime~~
+- ~~A basic search API to search the stored videos using their title and description~~
 - Dockerize the project
 - Add support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 - Make a dashboard to view the stored videos with filters and sorting options (optional)
