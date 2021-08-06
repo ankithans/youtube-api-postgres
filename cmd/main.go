@@ -32,4 +32,5 @@ func main() {
 
 func setupRoutes(app *fiber.App) {
 	app.Post("/api/v1/youtube", routes.PostVideos)
+	app.Get("/api/v1/videos", routes.GetVideos)
 }
