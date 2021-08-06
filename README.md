@@ -10,3 +10,12 @@ Fetch latest videos sorted in reverse chronological order of their publishing da
 - Add support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 - Make a dashboard to view the stored videos with filters and sorting options (optional)
 - Optimise search api, so that it's able to search videos containing partial match for the search query in either video title or description. Ex 1: A video with title How to make tea? should match for the search query tea how
+
+## Mockups
+
+![Database](mockups/db.png)
+![pagination](mockups/pagination.png)
+![sorting-asc](mockups/sorting-asc.png)
+![sorting-asc](mockups/sorting-desc.png)
+![search](mockups/search.png)
+
