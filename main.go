@@ -27,7 +27,7 @@ func main() {
 		return c.SendString(msg)
 	})
 
-	// go checkVideos()
+	go checkVideos()
 
 	// setup all routes
 	setupRoutes(app)
