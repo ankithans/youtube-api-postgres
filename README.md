@@ -1,6 +1,13 @@
 ## Youtube API
 Fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
 
+## Prerequisites
+The following things are required in order to run this project.
+
+- [Go >= v1.16](https://golang.org/dl)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Google Cloud Project](https://cloud.google.com/)
+
 ## Steps to Run
 
 1. Clone the repo. `cd youtube-api-postgres`
