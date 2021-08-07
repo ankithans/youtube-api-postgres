@@ -20,21 +20,29 @@ func main() {
 
 	// create new fiber app
 	app := fiber.New()
+
+	// enable cors
 	app.Use(cors.New())
 
+	// root route
 	app.Get("/", func(c *fiber.Ctx) error {
 		msg := "Server is up and Running!"
 		return c.SendString(msg)
 	})
 
+	// check new videos every 10 second
+	// and push them to database
 	go checkVideos()
 
 	// setup all routes
 	setupRoutes(app)
 
+	// listen to port 3000
 	log.Fatal(app.Listen(":3000"))
 }
 
+// check new videos every 10 second
+// and push them to database
 func checkVideos() {
 	for {
 		services.PostVideos()
@@ -43,6 +51,7 @@ func checkVideos() {
 	}
 }
 
+// Setups routes
 func setupRoutes(app *fiber.App) {
 	app.Get("/api/v1/videos", routes.GetVideos)
 }

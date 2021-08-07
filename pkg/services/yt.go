@@ -3,6 +3,7 @@ package services
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/ankithans/youtube-api/pkg/database"
 	"github.com/ankithans/youtube-api/pkg/models"
@@ -11,6 +12,8 @@ import (
 	"google.golang.org/api/youtube/v3"
 )
 
+// Get videos from youtube API and
+// post it to postgresql database
 func PostVideos() {
 
 	// Use Youtube API to get videos
@@ -21,11 +24,12 @@ func PostVideos() {
 		panic(err)
 	}
 
-	// tim := time.Now().Format(time.RFC3339)
+	// get latest videos on topic football
+	tim := time.Now().Format(time.RFC3339)
 	res, err := youtubeService.Search.List([]string{"id", "snippet"}).
 		Q("football").
 		MaxResults(10000).
-		// PublishedAfter(tim).
+		PublishedAfter(tim).
 		Do()
 
 	if err != nil {
@@ -34,6 +38,7 @@ func PostVideos() {
 
 	videos := []models.Video{}
 
+	// storing the vidoes in video model slice
 	for _, item := range res.Items {
 		fmt.Println(item)
 		if item.Id.Kind == "youtube#video" {
@@ -47,9 +52,6 @@ func PostVideos() {
 		}
 	}
 
-	fmt.Print(videos)
-
 	// Store them in database
 	database.DBConn.Create(&videos)
-
 }

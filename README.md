@@ -1,6 +1,14 @@
 ## Youtube API
 Fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
 
+## Steps to Run
+
+1. Clone the repo. `cd youtube-api-postgres`
+2. Run `go mod tidy`
+3. Create a `.env` file and put your `YOUTUBE_API_KEY` and `POSTGRES_URI`. You can follow .env.sample file present in the root directory
+4. Run `go run main.go`
+
+
 ## Tasks
 - ~~Server should call the YouTube API continuously in background (async) with some interval (say 10 seconds)~~
 - ~~fetching the latest videos for a predefined search query and should store the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs and any other fields you require) in a database with proper indexes~~
@@ -19,12 +27,6 @@ Fetch latest videos sorted in reverse chronological order of their publishing da
 ![sorting-asc](mockups/sorting-desc.png)
 ![search](mockups/search.png)
 
-## Steps to Run
-
-1. Clone the repo. `cd youtube-api-postgres`
-2. Run `go mod tidy`
-3. Create a `.env` file and put your `YOUTUBE_API_KEY`
-4. Run `go run main.go`
 
 ## Maintainer
 - [Ankit Hans](github.com/ankithans)

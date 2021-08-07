@@ -5,6 +5,7 @@ import (
 	"gorm.io/gorm"
 
 	"github.com/ankithans/youtube-api/pkg/models"
+	"github.com/ankithans/youtube-api/pkg/utils"
 )
 
 var (
@@ -13,7 +14,7 @@ var (
 
 func NewDatabase() *gorm.DB {
 	db, err := gorm.Open(postgres.New(postgres.Config{
-		DSN: "postgresql://localhost/ankithans",
+		DSN: utils.GoDotEnvVariable("POSTGRES_URI"),
 	}), &gorm.Config{})
 
 	if err != nil {
