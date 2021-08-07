@@ -21,7 +21,7 @@ Fetch latest videos sorted in reverse chronological order of their publishing da
 
 ## Mockups
 
-![Database](mockups/db.png)
+![Database](mockups/db1.png)
 ![pagination](mockups/pagination.png)
 ![sorting-asc](mockups/sorting-asc.png)
 ![sorting-asc](mockups/sorting-desc.png)
