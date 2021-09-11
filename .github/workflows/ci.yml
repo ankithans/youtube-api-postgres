@@ -17,10 +17,10 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'pkg'
+          source-directory: 'mockups'
           destination-github-username: 'ankithans'
           destination-repository-name: 'gh-action-test'
-          user-email: ankithans1947@gmail.com
+          # user-email: ankithans1947@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
